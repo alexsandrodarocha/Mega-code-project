@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorte Grande - Casa de apostas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body class="bg-dark">
+    <div class="container">
+        <div class="row mt-5 mb-2">
+            <img src="./images/trevo-logo.png" class="rounded mx-auto d-block" alt="logo" style="width: 200px;">
+        </div>
+        <div class="row text-center mb-5">
+            <h1 class="text-white">Loteria Sorte Grande</h1>
+        </div>
+
+        <div class="card">
+            <h5 class="card-header bg-secondary text-white">Acumulou!</h5>
+            <div class="card-body">
+              <h3 class="card-title">Mega-Code</h3>
+              <p class="card-text">Mais de um 🌽ão em prêmios para você! Teste sua sorte agora mesmo, clique no botão abaixo para iniciar a aposta.</p>
+              <a href="./registerBets.html" id="start" class="btn btn-success px-5">Iniciar</a>
+            </div>
+          </div>
+
+          <div class="card mt-5">
+            <h5 class="card-header bg-secondary text-white">Como funciona?</h5>
+            <div class="card-body">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                aria-controls="flush-collapseOne">
+                                Fase de apostas
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Os sorteios ocorrem sobre os números de 1 a 50;<br>
+                                Cada aposta deverá conter exatamente 5 números (não são permitidas apostas
+                                com menos de 5 ou com mais de 5 números);<br>
+                                Você poderá escolher livremente os números em que quer apostar, ou o
+                                sistema poderá sortear automaticamente os números (aposta “surpresinha”);</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                aria-controls="flush-collapseTwo">
+                                Fase de sorteio
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Na fase de sorteio, será inicialmente sorteado 5 números entre 1
+                                e 50;<br>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                aria-controls="flush-collapseThree">
+                                Fase de apuração
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Na fase de apuração, será verificado quais apostas acertaram os
+                                5
+                                números sorteados e:<br>
+                                a. Apostas vencedoras são somente aquelas que acertaram os 5 números
+                                (não existe premiação para 4 ou menos números).
+                                b. Caso nenhuma aposta tenha acertado os 5 números, o sistema
+                                realizará mais uma rodada de sorteio sorteando mais um número e
+                                acrescentando-o à lista de números sorteados, e repetindo a apuração,
+                                agora com 1 número sorteado a mais.
+                                c. O sistema repetirá esse mecanismo no máximo 25 vezes, até
+                                encontrar apostas vencedoras ou finalizar sem nenhum vencedor.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseFour" aria-expanded="false"
+                                aria-controls="flush-collapseFour">
+                                Fase de premiação
+                            </button>
+                        </h2>
+                        <div id="flush-collapseFour" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">O prêmio total será equivalente a 50% do total arrecadado, e o mesmo será distribuído igualmente entre todas as apostas vencedoras caso haja mais de um vencedor. <br>
+                                Obs.: Cada aposta custa R$5,00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="./scripts.js"></script>
+</body>
+</html>
