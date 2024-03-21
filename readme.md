@@ -20,7 +20,7 @@ O sistema foi desenvolvido em JavaScript e Bootstrap. O programa permite o regis
 6. **Premiação:** A funcionalidade de premiação foi implementada de forma autoral.
 
 ## Execução
-[Para executar o programa, basta clicar no link -> ](https://alexsandrodarochaexercicioitacademy.vercel.app/)
+[Para executar o programa, basta clicar neste link](https://alexsandrodarochaexercicioitacademy.vercel.app/)
 
 ---
 
