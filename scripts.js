@@ -19,7 +19,7 @@ const bets = [
     //     cpf: '11111111111',
     //     numbers: [1, 49, 3, 5, 40]
     // },
-        
+
 ]
 
 let id = 1000
@@ -48,47 +48,53 @@ buttonRegister.addEventListener('click', (e) => {
     if (option == 1) {
         alert(`***Informe os 5 números que deseja apostar sucessivamente*** 
         Obs.: são aceitos apenas números de 1 a 50`)
-        
+
         let numberOne = Number(prompt(`Informe o primeiro número: `))
         while (numberOne < 1 || numberOne > 50 || isNaN(numberOne) || numbers.includes(numberOne)) {
-        numberOne = Number(prompt("Por favor, informe um número entre 1 e 50 que não tenha sido escolhido anteriormente: "))
-        
-    }
-    numbers.push(numberOne)
+            numberOne = Number(prompt("Por favor, informe um número entre 1 e 50 que não tenha sido escolhido anteriormente: "))
 
-    let numberTwo = Number(prompt("Informe o segundo número: "))
-    while (numberTwo < 1 || numberTwo > 50 || isNaN(numberTwo) || numbers.includes(numberTwo)) {
-        numberTwo = Number(prompt("Por favor, informe um número entre 1 e 50 que não tenha sido escolhido anteriormente: "))
-    }
-    numbers.push(numberTwo)
+        }
+        numbers.push(numberOne)
 
-    let numberThree = Number(prompt("Informe o terceiro número: "))
-    while (numberThree < 1 || numberThree > 50 || isNaN(numberThree) || numbers.includes(numberThree)) {
-        numberThree = Number(prompt("Por favor, informe um número entre 1 e 50 que não tenha sido escolhido anteriormente: "))
-    }
-    numbers.push(numberThree)
+        let numberTwo = Number(prompt("Informe o segundo número: "))
+        while (numberTwo < 1 || numberTwo > 50 || isNaN(numberTwo) || numbers.includes(numberTwo)) {
+            numberTwo = Number(prompt("Por favor, informe um número entre 1 e 50 que não tenha sido escolhido anteriormente: "))
+        }
+        numbers.push(numberTwo)
 
-    let numberFour = Number(prompt("Informe o quarto número: "))
-    while (numberFour < 1 || numberFour > 50 || isNaN(numberFour) || numbers.includes(numberFour)) {
-        numberFour = Number(prompt("Por favor, informe um número entre 1 e 50 que não tenha sido escolhido anteriormente: "))
-    }
-    numbers.push(numberFour)
+        let numberThree = Number(prompt("Informe o terceiro número: "))
+        while (numberThree < 1 || numberThree > 50 || isNaN(numberThree) || numbers.includes(numberThree)) {
+            numberThree = Number(prompt("Por favor, informe um número entre 1 e 50 que não tenha sido escolhido anteriormente: "))
+        }
+        numbers.push(numberThree)
 
-    let numberFive = Number(prompt("Informe o quinto número: "))
-    while (numberFive < 1 || numberFive > 50 || isNaN(numberFive) || numbers.includes(numberFive)) {
-        numberFive = Number(prompt("Por favor, informe um número entre 1 e 50 que não tenha sido escolhido anteriormente: "))
-    }
-    numbers.push(numberFive)
-        
+        let numberFour = Number(prompt("Informe o quarto número: "))
+        while (numberFour < 1 || numberFour > 50 || isNaN(numberFour) || numbers.includes(numberFour)) {
+            numberFour = Number(prompt("Por favor, informe um número entre 1 e 50 que não tenha sido escolhido anteriormente: "))
+        }
+        numbers.push(numberFour)
+
+        let numberFive = Number(prompt("Informe o quinto número: "))
+        while (numberFive < 1 || numberFive > 50 || isNaN(numberFive) || numbers.includes(numberFive)) {
+            numberFive = Number(prompt("Por favor, informe um número entre 1 e 50 que não tenha sido escolhido anteriormente: "))
+        }
+        numbers.push(numberFive)
+
     } else if (option == 2) {
-        
+
         while (numbers.length < 5) {
             let number = Math.floor(Math.random() * 50) + 1;
-            if(!numbers.includes(number)) {
+            if (!numbers.includes(number)) {
                 numbers.push(number)
             }
         }
-        
+
+    } else if (option > 2) {
+        while (option > 2) {
+            option = Number(prompt(`Opção inválida, por favor escolha uma das seguintes pções:
+        1 - Informar os 5 números da aposta;
+        2 - Aposta surpresinha (números sorteados);`))
+        }
     }
 
     bets.push({
@@ -97,7 +103,7 @@ buttonRegister.addEventListener('click', (e) => {
         cpf: cpf,
         numbers: numbers
     })
-    
+
 })
 
 
@@ -109,7 +115,7 @@ buttonList.addEventListener('click', (e) => {
     let listPrint = ''
     for (let bet of bets) {
         listPrint += `ID: ${bet.id}, Nome: ${bet.name}, CPF: ${bet.cpf}, Bilhete: ${bet.numbers} <br>`
-        
+
     }
 
     modalContentList.innerHTML = `
@@ -123,60 +129,60 @@ buttonList.addEventListener('click', (e) => {
             </div>
         `
 
-    
+
 })
 
 buttonFinish.addEventListener('click', (e) => {
     e.preventDefault();
 
     const containerBody = document.getElementById('containerBody')
-        const wrapper = document.createElement('div')
-        wrapper.innerHTML += `
+    const wrapper = document.createElement('div')
+    wrapper.innerHTML += `
         <div class="alert alert-success alert-style alert-dismissible" role="alert">
             <div>Apuração realidada com sucesso!</div>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>`
 
-        containerBody.append(wrapper)
+    containerBody.append(wrapper)
 
-        let getNumbers = []
-        while (getNumbers.length < 5) {
-            let number = Math.floor(Math.random() * 50) + 1;
-            if (!getNumbers.includes(number)) {
-                getNumbers.push(number);
-            }
+    let getNumbers = []
+    while (getNumbers.length < 5) {
+        let number = Math.floor(Math.random() * 50) + 1;
+        if (!getNumbers.includes(number)) {
+            getNumbers.push(number);
         }
+    }
 
-        drawnNumbers = getNumbers;
-        
-        winners = bets.filter(bet => drawnNumbers.every(number => bet.numbers.includes(number)));
-        qtyWinners = winners.length;
-        
-        if(qtyWinners > 0) {
-            winnerTest = true          
-        } else {
-            while (!winnerTest === true && extraDraws < 24) {
-                if(extraDraws === 25) {
-                    break
-                } else {
-                    let extraNumber = Math.floor(Math.random() * 50) + 1;
+    drawnNumbers = getNumbers;
+
+    winners = bets.filter(bet => drawnNumbers.every(number => bet.numbers.includes(number)));
+    qtyWinners = winners.length;
+
+    if (qtyWinners > 0) {
+        winnerTest = true
+    } else {
+        while (!winnerTest === true && extraDraws < 24) {
+            if (extraDraws === 25) {
+                break
+            } else {
+                let extraNumber = Math.floor(Math.random() * 50) + 1;
                 while (drawnNumbers.includes(extraNumber)) {
                     extraNumber = Math.floor(Math.random() * 50) + 1;
                 }
                 drawnNumbers.push(extraNumber);
-                
+
                 winners = bets.filter(bet => bet.numbers.every(number => drawnNumbers.includes(number)));
                 qtyWinners = winners.length;
-            
-                if(qtyWinners > 0) {
-                    winnerTest = true     
+
+                if (qtyWinners > 0) {
+                    winnerTest = true
                 } else {
                     winnerTest = false
                     extraDraws++;
-                    
+
                 }
-                }    
-        }       
+            }
+        }
     }
 
 })
@@ -185,7 +191,7 @@ let winnersPrint = ''
 
 buttonResults.addEventListener("click", (e) => {
     e.preventDefault();
-    
+
     const modalContentResults = document.querySelector('.modal-content-results')
 
     if (winners.length > 0) {
@@ -197,27 +203,27 @@ buttonResults.addEventListener("click", (e) => {
         winnersPrint = `Não houve vencedores mesmo após o 25º número extra sorteado.`
     }
 
-        let betNumbers = bets.flatMap(bet => bet.numbers);
-        let countNumber = {};
-        betNumbers.forEach(number => {
-            countNumber[number] = (countNumber[number] || 0) + 1;
-        });
-        let orderedNumber = Object.entries(countNumber).sort((a, b) => b[1] - a[1]);
-        let orderedNumberPrint = ''
-        let orderedNumberPrintX = ''
-        orderedNumber.forEach(([number, qty]) => {
-            orderedNumberPrint += `${number}<br>`
-            orderedNumberPrintX += `${qty}<br>`
-        });
-    
-        modalContentResults.innerHTML = `
+    let betNumbers = bets.flatMap(bet => bet.numbers);
+    let countNumber = {};
+    betNumbers.forEach(number => {
+        countNumber[number] = (countNumber[number] || 0) + 1;
+    });
+    let orderedNumber = Object.entries(countNumber).sort((a, b) => b[1] - a[1]);
+    let orderedNumberPrint = ''
+    let orderedNumberPrintX = ''
+    orderedNumber.forEach(([number, qty]) => {
+        orderedNumberPrint += `${number}<br>`
+        orderedNumberPrintX += `${qty}<br>`
+    });
+
+    modalContentResults.innerHTML = `
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Resultados da apuração</h1>
             </div>
             <div class="modal-body">
                         <p>Números sorteados: ${drawnNumbers}</p>
                         <hr>
-                        <p>Quantidade de rodadas extras de sorteio realizadas: ${extraDraws+1}</p>
+                        <p>Quantidade de rodadas extras de sorteio realizadas: ${extraDraws + 1}</p>
                         <hr>
                         <p>Quantidade de apostas vencedoras: ${qtyWinners}</p>
                         <hr>
@@ -250,9 +256,9 @@ buttonAward.addEventListener('click', (e) => {
     let amountBets = parseFloat(bets.length * 5)
     let awardAmount = parseFloat(amountBets * 0.5)
     let awardValue = ''
-    if(winners.length === 1) {
+    if (winners.length === 1) {
         awardValue = parseFloat(awardAmount)
-    } else if(winners.length === 0){
+    } else if (winners.length === 0) {
         awardValue = parseFloat(0)
     } else {
         awardValue = parseFloat(awardAmount / winners.length)
