@@ -1,7 +1,7 @@
-# Programa IT Academy – Processo Seletivo – Edição #20
+# Mega code - project
 
 ## Informações Gerais
-Este repositório contém a solução para a atividade proposta no processo seletivo da IT Academy, Edição #20. O objetivo era desenvolver um sistema de controle de apostas, similar à Mega-Sena® e outros. O sistema deve funcionar em 4 fases: fase de apostas, fase de sorteio, fase de apuração e fase de premiação.
+Sistema de controle de apostas, similar à Mega-Sena® e outros. O sistema deve funcionar em 4 fases: fase de apostas, fase de sorteio, fase de apuração e fase de premiação.
 
 ## Desenvolvimento
 O sistema foi desenvolvido em JavaScript e Bootstrap. O programa permite o registro de apostas, realização de sorteios, apuração dos resultados e premiação dos vencedores de acordo com as regras estabelecidas.

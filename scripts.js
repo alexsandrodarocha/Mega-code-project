@@ -19,7 +19,6 @@ const bets = [
     //     cpf: '11111111111',
     //     numbers: [1, 49, 3, 5, 40]
     // },
-
 ]
 
 let id = 1000
@@ -27,7 +26,6 @@ let drawnNumbers = []
 let qtyWinners = 0
 let winners = ''
 let extraDraws = 0
-
 let winnerTest = false
 
 buttonRegister.addEventListener('click', (e) => {
@@ -128,8 +126,6 @@ buttonList.addEventListener('click', (e) => {
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
             </div>
         `
-
-
 })
 
 buttonFinish.addEventListener('click', (e) => {
@@ -246,7 +242,6 @@ buttonResults.addEventListener("click", (e) => {
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
             </div>
         `
-
 })
 
 buttonAward.addEventListener('click', (e) => {
@@ -285,5 +280,4 @@ buttonAward.addEventListener('click', (e) => {
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
             </div>
         `
-
 })
